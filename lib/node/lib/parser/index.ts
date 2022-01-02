@@ -1,8 +1,9 @@
 import { readFile } from "fs";
+import { createHash } from "crypto";
 import { parse as yamlParse } from "yaml";
 import axios from "axios";
 
-export async function parse(path: string): Promise<DomainsDefinition> {
+export async function parse(path: string, hash?: string): Promise<DomainsDefinition> {
     const data: string = await new Promise((resolve, reject) => {
         readFile(path, (err, data) => {
             if(err) { reject(err); return; }
@@ -10,12 +11,23 @@ export async function parse(path: string): Promise<DomainsDefinition> {
         })
     });
 
-    return await yamlParse(data) as DomainsDefinition
+    return parseFromData(data, hash);
 }
 
-export async function parseFromURL(url: string): Promise<DomainsDefinition> {
+export async function parseFromURL(url: string, hash?: string): Promise<DomainsDefinition> {
     const response = await axios.get(url);
-    return await yamlParse(response.data) as DomainsDefinition
+    return parseFromData(response.data, hash);
+}
+
+async function parseFromData(data: string, hash?: string): Promise<DomainsDefinition> {
+    if(hash != null) {
+        const hashRetrieved = createHash("sha512").update(data).digest("hex");
+        if(hashRetrieved !== hash) {
+            throw new Error("Hashes do not match");
+        }
+    }
+
+    return await yamlParse(data) as DomainsDefinition;
 }
 
 export enum DomainType {

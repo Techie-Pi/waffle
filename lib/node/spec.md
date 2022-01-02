@@ -5,7 +5,7 @@ This document is a checklist with all the features a library is expected to have
 ## Parsing capabilities
 - [x] Support for parsing local files
 - [x] Support for parsing remote files
-  - [ ] Support for hash check
+  - [x] Support for hash check
 
 ## Data support
 - [ ] Version
