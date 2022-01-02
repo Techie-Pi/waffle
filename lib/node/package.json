@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/Techie-Pi/waffle#readme",
   "dependencies": {
+    "axios": "^0.24.0",
     "yaml": "^1.10.2"
   },
   "engines": {

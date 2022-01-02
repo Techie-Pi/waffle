@@ -1,5 +1,6 @@
 import { readFile } from "fs";
 import { parse as yamlParse } from "yaml";
+import axios from "axios";
 
 export async function parse(path: string): Promise<DomainsDefinition> {
     const data: string = await new Promise((resolve, reject) => {
@@ -10,6 +11,11 @@ export async function parse(path: string): Promise<DomainsDefinition> {
     });
 
     return await yamlParse(data) as DomainsDefinition
+}
+
+export async function parseFromURL(url: string): Promise<DomainsDefinition> {
+    const response = await axios.get(url);
+    return await yamlParse(response.data) as DomainsDefinition
 }
 
 export enum DomainType {
