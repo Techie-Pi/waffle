@@ -1,0 +1,33 @@
+version: 1
+domain-set: 0
+private: false
+metadata:
+  worked: true
+domains:
+  - domain: service.example.com
+    type: service
+    ring: 0
+
+  - domain: service2.example.com
+    type: service
+    ring: 1
+
+  - domain: api.example.com
+    type: service
+    ring: 2
+
+  - domain: user-content.example.com
+    type: user-content
+    ring: 2
+
+  - domain: images-proxy.example.com
+    type: proxy
+    ring: 2
+
+  - domain: deprecated.example.com
+    type: proxy
+    ring: -3
+
+  - domain: example.com
+    type: landing
+    ring: 3
