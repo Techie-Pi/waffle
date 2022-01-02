@@ -13,9 +13,9 @@ This document is a checklist with all the features a library is expected to have
 - [ ] Domain set
   - [ ] Multiple domain sets support
 - [x] Metadata
-- [ ] Domains
+- [x] Domains
   - [x] Domain (host)
-  - [ ] Domain (host + wildcard)
+  - [x] Domain (host + wildcard)
   - [x] Type
   - [x] Ring
 

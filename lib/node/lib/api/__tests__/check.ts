@@ -10,10 +10,12 @@ describe("high level api", () => {
 
     it("retrieves deprecation status", () => {
         expect(HighApi.isDeprecated(data, "deprecated.example.com")).toStrictEqual(true);
+        expect(HighApi.isDeprecated(data, "d.legacy.example.com")).toStrictEqual(true);
     })
 
     it("retrieves removed or disabled status", () => {
         expect(HighApi.isRemovedOrDisabled(data, "deprecated.example.com")).toStrictEqual(true);
+        expect(HighApi.isDeprecated(data, "d.legacy.example.com")).toStrictEqual(true);
     })
 
     it("retrieves is landing", () => {

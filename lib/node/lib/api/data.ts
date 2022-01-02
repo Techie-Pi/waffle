@@ -31,8 +31,13 @@ export function getDomainRing(data: DomainsDefinition, domain: string): DomainRi
 function getDomainData(data: DomainsDefinition, domain: string): DomainDefinition[] {
     let domains = [];
     for(const refDomain of data.domains) {
-        if(refDomain.domain === domain) domains.push(refDomain);
+        if(refDomain.domain === domain || matchesWildcard(refDomain.domain, domain))
+            domains.push(refDomain);
     }
 
     return domains;
+}
+
+function matchesWildcard(domain1: string, domain2: string): boolean {
+    return new RegExp("^" + domain1.replace(/\*/g, ".*") + "$").test(domain2)
 }

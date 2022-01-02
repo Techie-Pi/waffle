@@ -28,6 +28,10 @@ domains:
     type: proxy
     ring: -3
 
+  - domain: "*.legacy.example.com"
+    type: proxy
+    ring: -3
+
   - domain: example.com
     type: landing
     ring: 3
