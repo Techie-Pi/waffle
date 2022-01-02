@@ -14,5 +14,10 @@ jobs:
         with:
           node-version: 12
 
-      - run: npm install
-      - run: npm test
+      - name: Install dependencies
+        working-directory: lib/node
+        run: npm install
+
+      - name: Test
+        working-directory: lib/node
+        run: npm test
