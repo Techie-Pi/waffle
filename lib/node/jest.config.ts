@@ -5,6 +5,12 @@ const config: Config.InitialOptions = {
     transform: {
         "^.+\\.ts?$": "ts-jest",
     },
+    testPathIgnorePatterns: [
+        "dist/"
+    ],
+    collectCoverageFrom: [
+        "lib/**/**.ts"
+    ],
 };
 
 export default config;
