@@ -8,8 +8,8 @@ This document is a checklist with all the features a library is expected to have
   - [x] Support for hash check
 
 ## Data support
-- [ ] Version
-  - [ ] Version checking
+- [x] Version
+  - [x] Version checking
 - [ ] Domain set
   - [ ] Multiple domain sets support
 - [x] Metadata

@@ -27,7 +27,15 @@ async function parseFromData(data: string, hash?: string): Promise<DomainsDefini
         }
     }
 
-    return await yamlParse(data) as DomainsDefinition;
+    const parsed = await yamlParse(data) as DomainsDefinition;
+    if(parsed.version < 1) {
+        throw new Error("Unreleased spec is being used, use the closed source library for support")
+    }
+    if(parsed.version > 1) {
+        throw new Error("Unsupported version is being used in the domains.yml file. Check for new versions of the library");
+    }
+
+    return parsed;
 }
 
 export enum DomainType {

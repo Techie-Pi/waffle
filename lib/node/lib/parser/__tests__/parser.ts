@@ -1,8 +1,8 @@
 import {parse, parseFromURL} from "../index";
 import * as Path from "path";
 
-const testURL = "https://raw.githubusercontent.com/Techie-Pi/domains/6e5bb473432ec4f21d1ec35a35a6f6b8afb5d5fc/domains.yml";
-const testURLHash = "584299b0f9c763f5d631d2704b142d3806cb5c3889e892b6c9fc8585c13441e01fa23aa133210384120a7132207f596f5c9ef81eb7ba1a689923bb98027eba08";
+const testURL = "https://raw.githubusercontent.com/Techie-Pi/domains/8942648ecd7fe8118c882db7490c18ddffe2be25/domains.yml";
+const testURLHash = "12882682998c04fe6b89f6e583007d653c2fa2469fd61d13c3217e21acc43881ebeb7849bf2d590f8985e444135afc7e62796c4f60fd6fe9687c8956048ef084";
 
 const example1Hash = "288c60740170c67a618d35ac014401950e03c446b8b3e8f93fd6132b721e2893d0dae0f98e5432ffa9130cb4fb773a7c4edb3acb030b3d7bdcaac4ad6e3623e6";
 
